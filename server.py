@@ -17,7 +17,12 @@ def check_answer(user_answer, correct_answer):
 
 # Set up the server socket: IPv4 (AF_INET) over TCP (SOCK_STREAM)
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind((HOST, PORT))
+try:
+    server_socket.bind((HOST, PORT))
+except OSError:
+    print("Could not start the server: port", PORT, "is already in use.")
+    print("Make sure no other copy of server.py is already running, then try again.")
+    exit()
 server_socket.listen()
 
 print("Quiz server is running and waiting for a player on port", PORT, "...")
@@ -36,6 +41,15 @@ for item in quiz_data:
 
     # Wait for the client's answer
     data = connection.recv(1024)
+
+    # An empty response means the client disconnected
+    if not data:
+            
+            print("Player disconnected before finishing the quiz.")
+            connection.close()
+            server_socket.close()
+            exit()
+
     player_answer = data.decode()
 
     # Check the answer and prepare a response message
