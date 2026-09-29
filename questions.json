@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What does TCP stand for?",
+        "answer": "Transmission Control Protocol"
+    },
+    {
+        "question": "What does IP stand for?",
+        "answer": "Internet Protocol"
+    },
+    {
+        "question": "What does the Client-Server model describe?",
+        "answer": "A server that receives requests from clients and sends back responses"
+    },
+    {
+        "question": "What layer of the OSI model handles routing between networks?",
+        "answer": "Network layer"
+    },
+    {
+        "question": "What does UDP stand for?",
+        "answer": "User Datagram Protocol"
+    }
+]
