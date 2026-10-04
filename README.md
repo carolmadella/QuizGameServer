@@ -13,7 +13,7 @@ The project has two separate programs: a server (`server.py`) that stores the qu
 
 My purpose in writing this software was to understand, hands-on, how two separate programs can exchange information over a network connection, including how to structure a simple request-response protocol, and how to handle real-world issues like a player disconnecting unexpectedly.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/La5X3eLl-7s)
 
 ## Network Communication
 
